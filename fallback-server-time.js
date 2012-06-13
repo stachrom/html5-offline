@@ -1,0 +1,1 @@
+var servertime = "<strong>nicht verfügbar, Sie müssen mit dem Server verbunden sein, damit die Server Zeit angezeigt werden kann.</strong>";

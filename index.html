@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" manifest="time.manifest">
+<head>
+<meta charset=utf-8 />
+<title>Your clock and mine</title>
+<link rel="stylesheet" href="time.css" type="text/css" />
+</head>
+<body>
+<p>Dei Zeit auf deinem PC <span id="yourtime">coming</span> und die auf dem Server <span id="servertime">being got</span></p>
+<script src="server-time.js"></script>
+<script src="time.js"></script>
+
+
+<script>
+
+function testOnline(fn){
+
+   var script = document.createElement('script');
+       script.src = 'online.js';
+       
+       // alias the setOnline function to the new function that was passed on.
+       window.setOnline = function(online){
+          document.body.removeChild(script);
+          fn(online);
+       }
+       
+       document.body.appendChild(script);
+}
+
+
+testOnline(function (online){
+
+   if(online){
+      applicationCache.update();
+   }else{
+      alert("you are offline");
+   }
+
+});
+
+
+
+
+
+</script>
+
+</body>
+</html>

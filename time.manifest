@@ -1,0 +1,14 @@
+CACHE MANIFEST
+
+# version 11  --> has the manifest changed? 
+
+CACHE:
+index.html
+time.js
+time.css
+
+FALLBACK:
+server-time.js fallback-server-time.js
+online.js offline.js
+
+
